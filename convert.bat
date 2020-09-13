@@ -1,19 +1,22 @@
 @echo off
 
+
+
 setlocal ENABLEDELAYEDEXPANSION
+
 
 REM When not there gives file not found message
 for /f "tokens=*" %%I in ('dir /b "*.mkv"') do (
-	call :BURN_FILE "%%~nI" "%%I"
+	if exist "%%~nI.nl.srt" call :BURN_FILE "%%~nI" "%%I"
 )
 for /f "tokens=*" %%I in ('dir /b "*.mp4"') do (
-	call :BURN_FILE "%%~nI" "%%I"
+	if exist "%%~nI.nl.srt" call :BURN_FILE "%%~nI" "%%I"
 )
 for /f "tokens=*" %%I in ('dir /b "*.webm"') do (
-	call :BURN_FILE "%%~nI" "%%I"
+	if exist "%%~nI.nl.srt" call :BURN_FILE "%%~nI" "%%I"
 )
 
-pause
+rem pause
 
 exit /b
 
@@ -28,9 +31,10 @@ exit /b
 	for /F "tokens=*" %%R in (bit_rate2.txt) do (
 		for /f "tokens=1,2 delims==" %%a in ("%%R") do set NAME=%%a & set bit_rate=%%b
 	)
-	
- 	sof.exe "!hoppa!.nl.srt"
-	sof.exe "!hoppa!.en.srt"
+
+	sof.exe "!hoppa!.nl.srt"
+
+rem	sof.exe "!hoppa!.en.srt"
 
 	if not exist DUTCH mkdir DUTCH
 
@@ -53,6 +57,8 @@ rem	if not exist SUBTITLES mkdir SUBTITLES
 rem	if exist "!hoppa!.nl.srt.fixed" move "!hoppa!.nl.srt.fixed" SUBTITLES
 rem	if exist "!hoppa!.nl.srt" move "!hoppa!.nl.srt" SUBTITLES
 
+	goto :ENDING
+
 	if not exist ENGLISH mkdir ENGLISH
 
  	for %%x in ("!hoppa!.en.srt.fixed") do (
@@ -73,7 +79,9 @@ rem 	if exist "!hoppa!.en.srt.fixed" move "!hoppa!.en.srt.fixed" SUBTITLES >NUL
 rem 	if exist "!hoppa!.en.srt" move "!hoppa!.en.srt" SUBTITLES >NUL
 
 	if not exist ORIGINAL mkdir ORIGINAL
-rem	move !input! ORIGINAL >NUL
+	move !input! ORIGINAL >NUL
 	move "!hoppa!.*" ORIGINAL >NUL
+
+:ENDING
 
 exit /b
