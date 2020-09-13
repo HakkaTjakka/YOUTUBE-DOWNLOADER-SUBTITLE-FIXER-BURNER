@@ -1,5 +1,13 @@
 YOUTUBE BATCH DOWNLOADER SUBTITLE FIXER/BURNER
 
+Latest:
+
+IMPORTANT: Fixed some bugs.....
+	-MOVE FILES TO RIGHT DIR ORIGINAL AFTER CONVERTSION
+	-STARTS CONVERTING FIRST, THEN DOWNLOADING
+	-CONVERTES AFTER EVERY DOWNLOAD
+	-WORKS FINE NOW!!! ;) Sorry....
+
 Meant for batch downloading lots of youtube video's, and burn subtitles in one or more languages (change code for other/more languages, convert.bat and download_youtube.bat)
 Now: --sub-lang "en,nl" (English, Dutch)
 Use youtube-dl --list-subs <youtube url> for available language tags
