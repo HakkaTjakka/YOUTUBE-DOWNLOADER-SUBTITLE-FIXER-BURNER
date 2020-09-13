@@ -3,40 +3,50 @@ YOUTUBE BATCH DOWNLOADER SUBTITLE FIXER/BURNER
 Latest:
 
 IMPORTANT: Fixed some bugs.....
-	-MOVE FILES TO RIGHT DIR ORIGINAL AFTER CONVERTSION
-	-STARTS CONVERTING FIRST, THEN DOWNLOADING
-	-CONVERTES AFTER EVERY DOWNLOAD
-	-WORKS FINE NOW!!! ;) Sorry....
+
+-MOVE FILES TO RIGHT DIR ORIGINAL AFTER CONVERTSION
+	
+-STARTS CONVERTING FIRST, THEN DOWNLOADING
+	
+-CONVERTES AFTER EVERY DOWNLOAD
+	
+-WORKS FINE NOW!!! ;) Sorry....
 
 Meant for batch downloading lots of youtube video's, and burn subtitles in one or more languages (change code for other/more languages, convert.bat and download_youtube.bat)
+
 Now: --sub-lang "en,nl" (English, Dutch)
+
 Use youtube-dl --list-subs <youtube url> for available language tags
 
 -Usage:
-	-place youtube link(s) (full url) from video and/or list into file LIST.TXT (See example)
-	-run WORK.BAT from dos cmd commandline or double click WORK.BAT
-	-IMPORTANT: edit convert.bat ffmpeg commands depending on video card (see REM statement) when not working, now: NVIDIA h264_nvenc encoder
-	-video's are converted to 1920 x 1080 pixels for nice hires subs. Change for 4k or other/original format(s)
+
+-place youtube link(s) (full url) from video and/or list into file LIST.TXT (See example)
+
+-run WORK.BAT from dos cmd commandline or double click WORK.BAT
+
+-IMPORTANT: edit convert.bat ffmpeg commands depending on video card (see REM statement) when not working, now: NVIDIA h264_nvenc encoder
+
+-video's are converted to 1920 x 1080 pixels for nice hires subs. Change for 4k or other/original format(s)
 	
 -Directory .\sof
 
-	-Subtitle overlap fixer
+-Subtitle overlap fixer
 
-	-Fixes downloaded subtitles with download_youtube.bat
+-Fixes downloaded subtitles with download_youtube.bat
 
-	-Otherwise you will have upper line changed, lower line changed, etc.
+-Otherwise you will have upper line changed, lower line changed, etc.
 
-	-File: dw.srt									.srt file for testing
+-File: dw.srt									.srt file for testing
 
-	-File: go1.15.2.windows-amd64.msi 				go compiler installer
+-File: go1.15.2.windows-amd64.msi 				go compiler installer
 
-	-File: make_subtitle-overlap-fixer.exe.bat		cmd batch file to compile subtitle-overlap-fixer.go into sof.exe (takes name directory: sof)
+-File: make_subtitle-overlap-fixer.exe.bat		cmd batch file to compile subtitle-overlap-fixer.go into sof.exe (takes name directory: sof)
 
-	-File: sof.exe									resulting .exe from subtitle-overlap-fixer.go with make_subtitle-overlap-fixer.exe.bat
+-File: sof.exe									resulting .exe from subtitle-overlap-fixer.go with make_subtitle-overlap-fixer.exe.bat
 
-	-File: subtitle-overlap-fixer.go				go language actual .srt fixer source
+-File: subtitle-overlap-fixer.go				go language actual .srt fixer source
 
-	-File: dw.srt.fixed								resulting test file from dw.srt made with sof.exe made with make_subtitle-overlap-fixer.exe.bat
+-File: dw.srt.fixed								resulting test file from dw.srt made with sof.exe made with make_subtitle-overlap-fixer.exe.bat
 	
 -File: ffmpeg.exe 									pacman ffmpeg video/audio encoder/decoder (Includes ALL codecs), used in convert.bat
 
