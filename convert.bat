@@ -60,6 +60,10 @@ rem	sof.exe "!hoppa!.en.srt"
 	for %%x in ("!hoppa!.nl.srt.fixed") do (
 		if not %%~zx == 0 (
 			if not  exist "DUTCH/!hoppa!.nl.mp4" (
+
+rem use diff font/size (font must be inside /windows/fonts dir.
+rem ffmpeg -y -hide_banner -i !input! -filter_complex "[0:v]scale=1920:1080[j];[j]subtitles='!hoppa!.nl.srt.fixed':force_style='FontName=Mada Black,FontSize=32'[k]" -map "[k]" -map 0:a -strict -2 -c:v h264_nvenc -pix_fmt yuv420p -rc-lookahead 32 -b:v !bit_rate! -ac 2 -ar 44100 -acodec aac "DUTCH/!hoppa!.nl.PART.mp4"
+			
 				ffmpeg -y -hide_banner -i !input! -filter_complex "[0:v]scale=1920:1080[j];[j]subtitles='!hoppa!.nl.srt.fixed'[k]" -map "[k]" -map 0:a -strict -2 -c:v h264_nvenc -pix_fmt yuv420p -rc-lookahead 32 -b:v !bit_rate! -ac 2 -ar 44100 -acodec aac "DUTCH/!hoppa!.nl.PART.mp4"
 rem				ffmpeg -y -hide_banner -i !input! -filter_complex "[0:v]scale=1920:1080[j];[j]subtitles='!hoppa!.nl.srt.fixed'[k]" -map "[k]" -map 0:a -strict -2 -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -b:v !bit_rate! -ac 2 -ar 44100 -acodec aac "DUTCH/!hoppa!.nl.PART.mp4"
 
